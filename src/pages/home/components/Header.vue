@@ -41,8 +41,10 @@ export default {
       background-color: #fff;
       border-radius: 0.1rem;
       .fa-search {
+        font-size: .32rem;
         position: relative;
         left: 8px;
+        top: -2px;
       }
     }
     .header-right {
