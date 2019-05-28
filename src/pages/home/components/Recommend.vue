@@ -10,8 +10,8 @@
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <div class="item-star">
-            <strong class="fa star" :style="{width: item.level}">&#xf005&#xf005&#xf005&#xf005&#xf005</strong>
-            <span class="fa star-o">&#xf006&#xf006&#xf006&#xf006&#xf006</span>
+            <strong class="fa star" :style="{width: item.level}">&#xf005;&#xf005;&#xf005;&#xf005;&#xf005;</strong>
+            <span class="fa star-o">&#xf006;&#xf006;&#xf006;&#xf006;&#xf006;</span>
             <p class="item-discuss">{{item.discuss}} 评论</p>  
           </div>
           <button class="item-button">查看详情</button>
