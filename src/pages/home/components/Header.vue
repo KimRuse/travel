@@ -2,13 +2,16 @@
   <div class="header">
     <div class="header-left"><span class="fa fa-angle-left"></span></div>
     <div class="header-mid"><span class="fa fa-search"></span></div>
-    <div class="header-right">城市<span class="fa fa-caret-down"></span></div>
+    <div class="header-right">{{this.city}}<span class="fa fa-caret-down"></span></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    city: String
+  }
 }
 </script>
 

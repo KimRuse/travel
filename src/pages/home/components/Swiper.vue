@@ -1,6 +1,6 @@
 <template>
   <div class="warpper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" >
       <swiper-slide v-for="item of swiperList" :key="item.id"><img class="swiper-img" :src="item.imgUrl" /></swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>  
@@ -18,17 +18,17 @@ export default {
     swiper,
     swiperSlide
   },
+  props: {
+    swiperList: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
-        loop: true
-      },
-      swiperList: [
-        {id: '0001',imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20195/60904fc24f223e0db5aee3c6148e641f.jpg_750x200_b1b90a19.jpg'},
-        {id: '0002',imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/e1e587f554e5a8372be44a4c6b73a5cf.jpg_750x200_5732f03f.jpg'},
-        {id: '0003',imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20195/505d7ffbfedeeeb5fb45e118adf4c7d0.jpg_750x200_2fe3d2e3.jpg'}
-      ]
+        loop: true,
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon"
              v-for="item of page"
@@ -25,47 +25,14 @@ export default {
   components: {
     swiper, swiperSlide
   },
+  props: {
+    iconList: Array
+  },
   data () {
     return {
-      iconList: [
-        {
-          id: '0001',
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        },{
-          id: '0002',
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '一日游'
-        },{
-          id: '0003',
-          iconUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3ef092d0a89ffddb7f781cda30c8ae49.png',
-          desc: '上海通'
-        },{
-          id: '0004',
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/f5/c4c9d9830404e602.png',
-          desc: '室内娱乐'
-        },{
-          id: '0005',
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        },{
-          id: '0006',
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '一日游'
-        },{
-          id: '0007',
-          iconUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3ef092d0a89ffddb7f781cda30c8ae49.png',
-          desc: '上海通'
-        },{
-          id: '0008',
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/f5/c4c9d9830404e602.png',
-          desc: '室内娱乐'
-        },{
-          id: '0009',
-          iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-          desc: '动植物园'
-        }
-      ]
+      swiperOption: {
+          loop: false
+      }
     }
   },
   computed: {
