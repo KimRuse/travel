@@ -1,17 +1,20 @@
 <template>
   <ul class="slide-list">
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
+    <li class="item"
+        v-for="(item, name) of cities"
+        :key="name"
+    >
+    {{name}}
+    </li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'Alphabet'
+  name: 'Alphabet',
+  props: {
+    cities: Object
+  }
 }
 </script>
 
