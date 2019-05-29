@@ -7,7 +7,7 @@
 <script>
 </script>
 
-<style lang="scss">
+<style lang="css">
 @import './assets/common/reset.css';
 @import './assets/common/font-awesome.css';
 
