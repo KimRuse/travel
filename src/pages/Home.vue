@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :city="city" />
+    <Header />
     <Swiper :swiperList="swiperList" />
     <Icons :iconList="iconList" />
     <Recommend :recommendList="recommendList" />
@@ -27,16 +27,16 @@ export default {
   },
   data () {
     return {
-      city: '上海',
       swiperList: [],
       iconList: [],
       recommendList: [],
-      weekendList: []
+      weekendList: [],
+      lastCity: ''
     }
   },
   methods: {
     getHomeInfo () {
-      axios.get('/index.json')
+      axios.get('/index.json?city='+ this.$store.state.city)
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
@@ -50,7 +50,14 @@ export default {
     }
   },
   mounted () {
+    this.lastCity = this.$store.state.city
     this.getHomeInfo()
+  },
+  activated() {
+    if (this.lastCity !== this.$store.state.city) {
+      this.lastCity = this.$store.state.city
+      this.getHomeInfo()
+    }
   }
 }
 </script>

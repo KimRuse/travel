@@ -5,7 +5,7 @@
         <div class="title border-t">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">上海</div>
+            <div class="button">{{this.$store.state.city}}</div>
           </div>
         </div>
       </div>
@@ -15,6 +15,7 @@
           <div class="button-wrapper"
                v-for="item of hot"
                :key="item.id"
+               @click="handleChangeCity(item.name)"
           >
             <div class="button">{{item.name}}</div>
           </div>
@@ -29,6 +30,7 @@
           <div class="item border-t"
                v-for="innerItem of item"
                :key="innerItem.id"
+               @click="handleChangeCity(innerItem.name)"
           >{{innerItem.name}}</div>
         </div>
       </div>
@@ -45,6 +47,12 @@ export default {
     hot: Array,
     cities: Object,
     letter: String
+  },
+  methods: {
+    handleChangeCity (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
+    }
   },
   watch: {
     letter () {

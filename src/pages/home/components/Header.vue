@@ -3,7 +3,7 @@
     <div class="header-left"><span class="fa fa-angle-left"></span></div>
     <div class="header-mid"><span class="fa fa-search"></span></div>
     <router-link to="/city">
-      <div class="header-right">{{this.city}}<span class="fa fa-caret-down"></span></div>
+      <div class="header-right">{{this.$store.state.city}}<span class="fa fa-caret-down"></span></div>
     </router-link>
   </div>
 </template>
@@ -54,7 +54,8 @@ export default {
     }
     .header-right {
       float: right;
-      width: 1.24rem;
+      min-width: 1.04rem;
+      padding: 0 .1rem;
       text-align: center;
       color: #fff;
       .fa-caret-down {
