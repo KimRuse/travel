@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.warpper >>> .swiper-pagination-bullet-active {
+.warpper /deep/ .swiper-pagination-bullet-active {
   background: #fff;
 }
 .warpper {
