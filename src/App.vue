@@ -12,6 +12,7 @@
 <style lang="css">
 @import './assets/common/reset.css';
 @import './assets/common/font-awesome.css';
+@import './assets/common/border.css';
 
 html {
   font-size: 50px;
