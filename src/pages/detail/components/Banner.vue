@@ -10,17 +10,20 @@
         </div>
       </div>
     </div>
+    <animation>
     <Gallary :imgs="gallaryImgs" v-if="showGallary" @change="changeShow" />
+    </animation>
   </div>
 </template>
 
 <script>
 import Gallary from '@/pages/common/gallary/Gallary.vue'
+import Animation from '@/pages/common/fade/Animation.vue'
 
 export default {
   name: 'Banner',
   components: {
-    Gallary
+    Gallary, Animation
   },
   props: {
     sightName: String,
